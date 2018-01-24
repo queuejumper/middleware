@@ -3,8 +3,10 @@
 to pass parameter via url attach (query)
 */
 return [
-	"info/(query)" => "site/info",
+	"info" => "site/info",
 	"api/test/(query)" => 'product/test',
-
+	"get-user" => "sales/getUser",
+	"api/get-sales/(query)" => "sales/GetSales",
+	"api/create-sales" => "sales/CreateSales",
 
 ];

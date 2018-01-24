@@ -10,11 +10,4 @@ $config = [
 	'params' => $params,
 ];
 
-if(ENV == 'dev')
-{
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
-}
-
-
 return $config;

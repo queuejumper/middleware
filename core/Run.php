@@ -1,8 +1,8 @@
 <?php
 namespace core;
-
 /**
-* 
+AUTHOR: AHMED SALLAM
+DESCRIPTION: THIS CLASS ACTS AS AN APPLICATION CORE. ROUTES REQUESTS.
 */
 class Run 
 {
@@ -23,6 +23,8 @@ class Run
 			die("Request Not Found");
 		
 		$path = parse_url($this->url)['path'];
+		if(ENV == "pro")
+			$path = str_replace("middleware/", "", $path);
 		$this->url = ($urlManager['showIndex']) ? str_replace('/index.php/','',$path) 
 				: str_replace('/','',$path);
 		$this->eUrl = explode('/', $this->url);
@@ -100,6 +102,8 @@ class Run
 		$action = "action".$action;
 		if(!method_exists($object, $action))
 			$this->throwError("Request Not Found4");
+		if(empty($arguments))
+			$arguments[] = null;
 		try
 		{
 			call_user_func_array([$object,$action],$arguments);
@@ -116,9 +120,7 @@ class Run
 			$inst = new \API();
 			die($inst->setHeader(404,$msg));
 		}else
-		{
-			die($message);
-		}
+			die($msg);
 	}
 	
 	

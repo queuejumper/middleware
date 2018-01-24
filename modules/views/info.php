@@ -1,18 +1,13 @@
-<?php
-echo trim($_SERVER['PATH_INFO']);
-?>
 <div class="primary-box">
 	<div class="options">
 		<select name="url-options" id="url-options" autocomplete="off">
 			<option selected disabled hidden>Select Url</option>
-<!-- 			<?php 
-				foreach ($urls as $key => $value):?>
-				<option value=<?=$key?>><?=$value?></option>
-			<?php endforeach;?> -->
 		</select>
 	</div>
-	<h5 style="text-align: center;" class="no-margin">Base Info</h5>
+	<h5 style="text-align: center;" class="no-margin">Info</h5>
 	<div class="default-box">
+		<p>Company: <span id="company"></span></p>
+		<p>Token: <span id="token"></span></p>
 		<p>Type: <span id="request-type"></span></p>
 		<p>Endpoint: <span id="url"></span></p>
 	</div>

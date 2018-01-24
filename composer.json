@@ -2,7 +2,7 @@
 
 	"autoload": 
 	{
-     	 "classmap":["core/","modules/"]
+     	 "classmap":["core/","modules/","lib/"]
 
      	
 	}
